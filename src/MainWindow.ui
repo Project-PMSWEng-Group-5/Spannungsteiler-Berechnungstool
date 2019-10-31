@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1152</width>
-    <height>493</height>
+    <width>850</width>
+    <height>490</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -34,7 +34,7 @@
      <string/>
     </property>
     <property name="statusTip">
-     <string extracomment="weöfjfkj"/>
+     <string/>
     </property>
     <property name="text">
      <string/>
@@ -46,13 +46,208 @@
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QLabel" name="lbl_inputVoltage">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>187</y>
+      <width>71</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_outputVoltage">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>262</y>
+      <width>71</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>30</y>
+      <width>170</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Eingangsspannung [V]:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>80</y>
+      <width>170</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Ausgangsspannung [V]:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="led_inputVoltage">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>30</y>
+      <width>140</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="led_outputVoltage">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>80</y>
+      <width>140</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>130</y>
+      <width>170</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Widerstand R1:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>180</y>
+      <width>170</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Widerstand R2:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_R1value">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>130</y>
+      <width>170</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_R2value">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>180</y>
+      <width>170</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>230</y>
+      <width>311</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>E-Reihe</string>
+    </property>
+    <widget class="QRadioButton" name="radioButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>211</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>E3, Toleranz &gt; ± 20%</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButton_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>211</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>E6, Toleranz ± 20%</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButton_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>211</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>E12, Toleranz ± 10%</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButton_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>211</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>E24, Toleranz ± 5%</string>
+     </property>
+    </widget>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1152</width>
+     <width>850</width>
      <height>22</height>
     </rect>
    </property>
@@ -66,6 +261,11 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="action_ber_Spannungsteiler_Berechnungstool">
+   <property name="text">
+    <string>Über Spannungsteiler-Berechnungstool</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
