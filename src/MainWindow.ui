@@ -104,7 +104,7 @@
      <string>Ausgangsspannung [V]:</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="led_inputVoltage">
+   <widget class="QLineEdit" name="txt_inputVoltage">
     <property name="geometry">
      <rect>
       <x>650</x>
@@ -114,7 +114,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="led_outputVoltage">
+   <widget class="QLineEdit" name="txt_outputVoltage">
     <property name="geometry">
      <rect>
       <x>650</x>
@@ -176,7 +176,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QGroupBox" name="groupBox">
+   <widget class="QGroupBox" name="grb_ESeries">
     <property name="geometry">
      <rect>
       <x>480</x>
@@ -188,7 +188,7 @@
     <property name="title">
      <string>E-Reihe</string>
     </property>
-    <widget class="QRadioButton" name="radioButton">
+    <widget class="QRadioButton" name="rb_E3">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -201,7 +201,7 @@
       <string>E3, Toleranz &gt; ± 20%</string>
      </property>
     </widget>
-    <widget class="QRadioButton" name="radioButton_2">
+    <widget class="QRadioButton" name="rb_E6">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -214,7 +214,7 @@
       <string>E6, Toleranz ± 20%</string>
      </property>
     </widget>
-    <widget class="QRadioButton" name="radioButton_3">
+    <widget class="QRadioButton" name="rb_E12">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -227,7 +227,7 @@
       <string>E12, Toleranz ± 10%</string>
      </property>
     </widget>
-    <widget class="QRadioButton" name="radioButton_4">
+    <widget class="QRadioButton" name="rb_E24">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -254,10 +254,10 @@
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
+    <enum>BottomToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
-    <bool>false</bool>
+    <bool>true</bool>
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
