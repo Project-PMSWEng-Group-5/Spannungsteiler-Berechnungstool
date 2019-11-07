@@ -56,7 +56,7 @@ public:
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(850, 490);
         QIcon icon;
-        icon.addFile(QString::fromUtf8("../pictures/icon.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QString::fromUtf8(":/res/pictures/icon.png"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
         action_ber_Spannungsteiler_Berechnungstool = new QAction(MainWindow);
         action_ber_Spannungsteiler_Berechnungstool->setObjectName(QString::fromUtf8("action_ber_Spannungsteiler_Berechnungstool"));
@@ -65,7 +65,7 @@ public:
         label = new QLabel(centralWidget);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(20, 20, 411, 381));
-        label->setPixmap(QPixmap(QString::fromUtf8("../pictures/VoltageDivider.png")));
+        label->setPixmap(QPixmap(QString::fromUtf8(":/res/pictures/VoltageDivider.png")));
         label->setScaledContents(true);
         lbl_inputVoltage = new QLabel(centralWidget);
         lbl_inputVoltage->setObjectName(QString::fromUtf8("lbl_inputVoltage"));
@@ -120,7 +120,6 @@ public:
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
         MainWindow->addToolBar(Qt::BottomToolBarArea, mainToolBar);
-        MainWindow->insertToolBarBreak(mainToolBar);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QString::fromUtf8("statusBar"));
         MainWindow->setStatusBar(statusBar);

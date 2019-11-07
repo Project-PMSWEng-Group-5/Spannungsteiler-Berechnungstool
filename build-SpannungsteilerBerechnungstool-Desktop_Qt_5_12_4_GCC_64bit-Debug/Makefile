@@ -53,9 +53,11 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../src/MainWindow.cpp \
-		../src/main.cpp moc_MainWindow.cpp
+		../src/main.cpp qrc_resource.cpp \
+		moc_MainWindow.cpp
 OBJECTS       = MainWindow.o \
 		main.o \
+		qrc_resource.o \
 		moc_MainWindow.o
 DIST          = /opt/qt/5.12.4/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/qt/5.12.4/gcc_64/mkspecs/common/unix.conf \
@@ -422,7 +424,8 @@ Makefile: ../SpannungsteilerBerechnungstool.pro /opt/qt/5.12.4/gcc_64/mkspecs/li
 		/opt/qt/5.12.4/gcc_64/mkspecs/features/exceptions.prf \
 		/opt/qt/5.12.4/gcc_64/mkspecs/features/yacc.prf \
 		/opt/qt/5.12.4/gcc_64/mkspecs/features/lex.prf \
-		../SpannungsteilerBerechnungstool.pro
+		../SpannungsteilerBerechnungstool.pro \
+		../resource.qrc
 	$(QMAKE) -o Makefile ../SpannungsteilerBerechnungstool.pro -spec linux-clang CONFIG+=debug CONFIG+=qml_debug
 /opt/qt/5.12.4/gcc_64/mkspecs/features/spec_pre.prf:
 /opt/qt/5.12.4/gcc_64/mkspecs/common/unix.conf:
@@ -601,6 +604,7 @@ Makefile: ../SpannungsteilerBerechnungstool.pro /opt/qt/5.12.4/gcc_64/mkspecs/li
 /opt/qt/5.12.4/gcc_64/mkspecs/features/yacc.prf:
 /opt/qt/5.12.4/gcc_64/mkspecs/features/lex.prf:
 ../SpannungsteilerBerechnungstool.pro:
+../resource.qrc:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ../SpannungsteilerBerechnungstool.pro -spec linux-clang CONFIG+=debug CONFIG+=qml_debug
 
@@ -615,6 +619,7 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
+	$(COPY_FILE) --parents ../resource.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /opt/qt/5.12.4/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../include/MainWindow.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../src/MainWindow.cpp ../src/main.cpp $(DISTDIR)/
@@ -642,8 +647,15 @@ check: first
 
 benchmark: first
 
-compiler_rcc_make_all:
+compiler_rcc_make_all: qrc_resource.cpp
 compiler_rcc_clean:
+	-$(DEL_FILE) qrc_resource.cpp
+qrc_resource.cpp: ../resource.qrc \
+		/opt/qt/5.12.4/gcc_64/bin/rcc \
+		../pictures/icon.png \
+		../pictures/VoltageDivider.png
+	/opt/qt/5.12.4/gcc_64/bin/rcc -name resource ../resource.qrc -o qrc_resource.cpp
+
 compiler_moc_predefs_make_all: moc_predefs.h
 compiler_moc_predefs_clean:
 	-$(DEL_FILE) moc_predefs.h
@@ -781,7 +793,7 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
+compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
 
 ####### Compile
 
@@ -892,7 +904,41 @@ MainWindow.o: ../src/MainWindow.cpp ../include/MainWindow.h \
 		/opt/qt/5.12.4/gcc_64/include/QtGui/qtouchdevice.h \
 		/opt/qt/5.12.4/gcc_64/include/QtWidgets/qtabwidget.h \
 		/opt/qt/5.12.4/gcc_64/include/QtGui/qicon.h \
-		ui_MainWindow.h
+		ui_MainWindow.h \
+		/opt/qt/5.12.4/gcc_64/include/QtCore/QVariant \
+		/opt/qt/5.12.4/gcc_64/include/QtGui/QIcon \
+		/opt/qt/5.12.4/gcc_64/include/QtWidgets/QAction \
+		/opt/qt/5.12.4/gcc_64/include/QtWidgets/qaction.h \
+		/opt/qt/5.12.4/gcc_64/include/QtWidgets/qactiongroup.h \
+		/opt/qt/5.12.4/gcc_64/include/QtWidgets/QApplication \
+		/opt/qt/5.12.4/gcc_64/include/QtWidgets/qapplication.h \
+		/opt/qt/5.12.4/gcc_64/include/QtCore/qcoreapplication.h \
+		/opt/qt/5.12.4/gcc_64/include/QtCore/qeventloop.h \
+		/opt/qt/5.12.4/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/opt/qt/5.12.4/gcc_64/include/QtGui/qguiapplication.h \
+		/opt/qt/5.12.4/gcc_64/include/QtGui/qinputmethod.h \
+		/opt/qt/5.12.4/gcc_64/include/QtWidgets/QGroupBox \
+		/opt/qt/5.12.4/gcc_64/include/QtWidgets/qgroupbox.h \
+		/opt/qt/5.12.4/gcc_64/include/QtWidgets/qframe.h \
+		/opt/qt/5.12.4/gcc_64/include/QtWidgets/QLabel \
+		/opt/qt/5.12.4/gcc_64/include/QtWidgets/qlabel.h \
+		/opt/qt/5.12.4/gcc_64/include/QtWidgets/QLineEdit \
+		/opt/qt/5.12.4/gcc_64/include/QtWidgets/qlineedit.h \
+		/opt/qt/5.12.4/gcc_64/include/QtGui/qtextcursor.h \
+		/opt/qt/5.12.4/gcc_64/include/QtGui/qtextformat.h \
+		/opt/qt/5.12.4/gcc_64/include/QtGui/qpen.h \
+		/opt/qt/5.12.4/gcc_64/include/QtGui/qtextoption.h \
+		/opt/qt/5.12.4/gcc_64/include/QtWidgets/QMenuBar \
+		/opt/qt/5.12.4/gcc_64/include/QtWidgets/qmenubar.h \
+		/opt/qt/5.12.4/gcc_64/include/QtWidgets/qmenu.h \
+		/opt/qt/5.12.4/gcc_64/include/QtWidgets/QRadioButton \
+		/opt/qt/5.12.4/gcc_64/include/QtWidgets/qradiobutton.h \
+		/opt/qt/5.12.4/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/opt/qt/5.12.4/gcc_64/include/QtWidgets/QStatusBar \
+		/opt/qt/5.12.4/gcc_64/include/QtWidgets/qstatusbar.h \
+		/opt/qt/5.12.4/gcc_64/include/QtWidgets/QToolBar \
+		/opt/qt/5.12.4/gcc_64/include/QtWidgets/qtoolbar.h \
+		/opt/qt/5.12.4/gcc_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MainWindow.o ../src/MainWindow.cpp
 
 main.o: ../src/main.cpp /opt/qt/5.12.4/gcc_64/include/QtWidgets/QApplication \
@@ -1010,6 +1056,9 @@ main.o: ../src/main.cpp /opt/qt/5.12.4/gcc_64/include/QtWidgets/QApplication \
 		/opt/qt/5.12.4/gcc_64/include/QtWidgets/qtabwidget.h \
 		/opt/qt/5.12.4/gcc_64/include/QtGui/qicon.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../src/main.cpp
+
+qrc_resource.o: qrc_resource.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_resource.o qrc_resource.cpp
 
 moc_MainWindow.o: moc_MainWindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_MainWindow.o moc_MainWindow.cpp

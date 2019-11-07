@@ -14,8 +14,8 @@
    <string>Spannungsteiler-Berechnungstool</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>../pictures/icon.png</normaloff>../pictures/icon.png</iconset>
+   <iconset resource="../resource.qrc">
+    <normaloff>:/res/pictures/icon.png</normaloff>:/res/pictures/icon.png</iconset>
   </property>
   <property name="toolTip">
    <string/>
@@ -40,7 +40,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../pictures/VoltageDivider.png</pixmap>
+     <pixmap resource="../resource.qrc">:/res/pictures/VoltageDivider.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -257,7 +257,7 @@
     <enum>BottomToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
-    <bool>true</bool>
+    <bool>false</bool>
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
@@ -268,6 +268,8 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="../resource.qrc"/>
+ </resources>
  <connections/>
 </ui>

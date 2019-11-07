@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/res">
+        <file>pictures/icon.png</file>
+        <file>pictures/VoltageDivider.png</file>
+    </qresource>
+</RCC>
