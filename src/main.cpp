@@ -25,3 +25,30 @@ int main(int argc, char* argv[])
   return a.exec();
 }
 
+double findClosest( double value, double* eSeries)
+{
+        double delta = abs(eSeries[0]-value);
+        double d = 0;
+        int index = 0;
+        int exponent = 0;
+        double num = value;
+
+        while (num < 1) {
+            num = num * 10;
+            exponent = exponent - 1;
+        }
+        while (num >= 10) {
+            num = num / 10;
+            exponent = exponent + 1;
+        }
+        for (int n = 1; n < sizeof(eSeries)/sizeof(eSeries[0]); ++n){
+            d = abs( eSeries[n] - num);
+            if(d <= delta) {
+                delta = d;
+                index = n;
+            }
+        }
+        num = eSeries[index] * pow(10, double(exponent));
+        num = double(round(100*num)/100); //round to 2 decimals
+        return num;
+ }
