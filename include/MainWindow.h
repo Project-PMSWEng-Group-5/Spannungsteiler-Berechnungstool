@@ -21,9 +21,9 @@ private slots:
 private:
     Ui::MainWindow *ui;
 
-    /* DESCRIPTION :    Evaluates number of choosen E-Series which matches the best the given value
+    /* DESCRIPTION :    Evaluates number of chosen E-Series which matches the best the given value
     * INPUTS :          double value    -> value of which closest E-Series number should be evaluated
-    *                   double* eSerie  -> Pointer to the choosen E-Series
+    *                   double* eSerie  -> Pointer to the chosen E-Series
     * OUTPUTS :         double number   -> evaluated E-Series number
     */
     double findClosest(double value, const double* eSerie);

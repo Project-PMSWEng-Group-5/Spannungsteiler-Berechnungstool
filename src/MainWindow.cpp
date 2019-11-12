@@ -3,6 +3,7 @@
 #include <QButtonGroup>
 #include <cmath>        // std::abs
 
+//Lookup tables for E-Series
 const double E3[]{1.0, 2.2, 4.7,0.0};
 const double E6[] = {1.0, 1.5, 2.2, 3.3, 4.7, 6.8,0.0};
 const double E12[] = {1.0, 1.2, 1.5, 1.8, 2.2, 2.7, 3.3, 3.9, 4.7, 5.6, 6.8, 8.2,0.0};
@@ -97,7 +98,7 @@ void MainWindow::on_btnCalculate_clicked()
     group->addButton(ui->rb_E24,3);
     const double* eSerie;
     eSerie = E3;
-    switch(group->checkedId()) {
+    switch(group->checkedId()) {                            // Evaluate the chosen E-Serie
         case 1: eSerie = E6; break;
         case 2: eSerie = E12; break;
         case 3: eSerie = E24; break;
@@ -108,8 +109,8 @@ void MainWindow::on_btnCalculate_clicked()
     double diff = uIn - uOut;                               // voltage over R2
     double R1 = findClosest(diff, eSerie);
     double R2 = findClosest(uOut, eSerie);
-    ui->lbl_R1value->setText(QString::number(R1) + " 10^x Ω");
-    ui->lbl_R2value->setText(QString::number(R2) + " 10^x Ω");
+    ui->lbl_R1value->setText(QString::number(R1) + " * 10^x Ω");
+    ui->lbl_R2value->setText(QString::number(R2) + " * 10^x Ω");
 }
 
 double MainWindow::findClosest(double value, const double* eSerie)
@@ -117,7 +118,7 @@ double MainWindow::findClosest(double value, const double* eSerie)
         double delta = abs(eSerie[0]-value);
         double d = 0;
         int index = 0;
-        int exponent = 0;
+        int exponent = 0;                                   // to scale the E-Series value to the correct number
         double num = value;
 
         while (num < 1) {
@@ -129,7 +130,7 @@ double MainWindow::findClosest(double value, const double* eSerie)
             exponent = exponent + 1;
         }
         int n = 1;
-        while (eSerie[n] != 0.0){
+        while (eSerie[n] != 0.0){                           // find E-Series value with smallest delta till last value of array ("0.0") reached
             d = abs( eSerie[n] - num);
             if(d <= delta) {
                 delta = d;
@@ -138,6 +139,6 @@ double MainWindow::findClosest(double value, const double* eSerie)
             ++n;
         }
         num = eSerie[index] * pow(10, double(exponent));
-        num = double(round(100*num)/100); //round to 2 decimals
+        num = double(round(100*num)/100);                   // round to 2 decimals
         return num;
  }
