@@ -155,7 +155,7 @@
      <rect>
       <x>650</x>
       <y>130</y>
-      <width>170</width>
+      <width>141</width>
       <height>20</height>
      </rect>
     </property>
@@ -168,7 +168,7 @@
      <rect>
       <x>650</x>
       <y>180</y>
-      <width>170</width>
+      <width>141</width>
       <height>20</height>
      </rect>
     </property>
@@ -199,6 +199,9 @@
      </property>
      <property name="text">
       <string>E3, Toleranz &gt; ± 20%</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
      </property>
     </widget>
     <widget class="QRadioButton" name="rb_E6">
