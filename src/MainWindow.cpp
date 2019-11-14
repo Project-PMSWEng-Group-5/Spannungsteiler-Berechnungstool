@@ -4,7 +4,7 @@
 #include <cmath>        // std::abs
 
 //Lookup tables for E-Series
-const double E3[]{1.0, 2.2, 4.7,0.0};
+const double E3[] = {1.0, 2.2, 4.7,0.0};
 const double E6[] = {1.0, 1.5, 2.2, 3.3, 4.7, 6.8,0.0};
 const double E12[] = {1.0, 1.2, 1.5, 1.8, 2.2, 2.7, 3.3, 3.9, 4.7, 5.6, 6.8, 8.2,0.0};
 const double E24[] = {1.0, 1.1, 1.2, 1.3, 1.5, 1.6, 1.8, 2.0, 2.2, 2.4, 2.7, 3.0, 3.3, 3.6, 3.9, 4.3, 4.7, 5.1, 5.6, 6.2, 6.8, 7.5, 8.2, 9.1,0.0};
@@ -109,8 +109,8 @@ void MainWindow::on_btnCalculate_clicked()
     double diff = uIn - uOut;                               // voltage over R2
     double R1 = findClosest(diff, eSerie);
     double R2 = findClosest(uOut, eSerie);
-    ui->lbl_R1value->setText(QString::number(R1) + " * 10^x Ω");
-    ui->lbl_R2value->setText(QString::number(R2) + " * 10^x Ω");
+    ui->lbl_R1value->setText(QString::number(R1) + " * 10<sup>x</sup> Ω");
+    ui->lbl_R2value->setText(QString::number(R2) + " * 10<sup>x</sup> Ω");
 }
 
 double MainWindow::findClosest(double value, const double* eSerie)

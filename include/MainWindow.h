@@ -27,7 +27,6 @@ private:
     * OUTPUTS :         double number   -> evaluated E-Series number
     */
     double findClosest(double value, const double* eSerie);
-
 };
 
 #endif // MAINWINDOW_H
