@@ -1,32 +1,38 @@
 #include "../include/CheckInput.h"
 
-static QString strInput;
-static QString strOutput;
-
 int Test::checkInputfromKeyboard(QString* str1, QString* str2)
 {
+  static QString strTestInput;
+  static QString strTestOutput;
+
   // Convert String to UTF8-Set
-  strInput = str1->toUtf8();
-  strOutput = str2->toUtf8();
+  strTestInput = str1->toUtf8();
+  strTestOutput = str2->toUtf8();
 
   // Get String lenght
   int str1Lenght = str1->size();
   int str2Lenght = str2->size();
 
+  // Check if Input/Output has values
+  if (str1Lenght == 0 || str2Lenght == 0)
+  {
+    return NoValues;
+  }
+
   // Check Input Voltage for invalid Characters
   for (int i = 0; i < str1Lenght; ++i)
   {
-    if (!(((strInput[i] >= ("0")) && (strInput[i] <= ("9"))) ||
-          (strInput[i] == ("."))))
-      return 1;  // Unknown Character
+    if (!(((strTestInput[i] >= ("0")) && (strTestInput[i] <= ("9"))) ||
+          (strTestInput[i] == ("."))))
+      return InputVoltageNotOk;  // Unknown Character
   }
 
   // Check Output Voltage for invalid Characters
   for (int i = 0; i < str2Lenght; ++i)
   {
-    if (!(((strOutput[i] >= ("0")) && (strOutput[i] <= ("9"))) ||
-          (strOutput[i] == ("."))))
-      return 2;  // Unknown Character
+    if (!(((strTestOutput[i] >= ("0")) && (strTestOutput[i] <= ("9"))) ||
+          (strTestOutput[i] == ("."))))
+      return OutputVoltageNotOk;  // Unknown Character
   }
 
   // Check if Output Voltage is higher than Input Voltage
@@ -34,7 +40,23 @@ int Test::checkInputfromKeyboard(QString* str1, QString* str2)
   double Outputvoltage = str2->toDouble();
 
   if (Outputvoltage >= InputVoltage)
-    return 3;  // Output higher than Input
+    return OutputVoltageHigherThanInputVoltage;  // Output greather or equal
+                                                 // than Input
 
-  return 0;  // Everything OK
+  return NoError;  // Everything OK
+}
+
+void Test::replaceInvalidChar(QString& str1, QString& str2)
+{
+  for (int i = 0; i < (str1.size()); ++i)
+  {
+    if (str1[i] == ",")
+      str1.replace(",", ".");
+  }
+
+  for (int i = 0; i < (str2.size()); ++i)
+  {
+    if (str2[i] == ",")
+      str2.replace(",", ".");
+  }
 }

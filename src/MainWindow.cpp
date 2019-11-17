@@ -14,9 +14,9 @@ const double E24[] = {1.0, 1.1, 1.2, 1.3, 1.5, 1.6, 1.8, 2.0, 2.2,
                       5.6, 6.2, 6.8, 7.5, 8.2, 9.1, 0.0};
 
 // Objects for Strings
-static QString str1;
-static QString str2;
-static Test t1;
+static QString strInput;
+static QString strOutput;
+static Test T;
 
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
@@ -124,16 +124,19 @@ void MainWindow::on_btnCalculate_clicked()
   }
 
   // Read user input
-  str1 = ui->txt_inputVoltage->text();
-  str2 = ui->txt_outputVoltage->text();
+  strInput = ui->txt_inputVoltage->text();
+  strOutput = ui->txt_outputVoltage->text();
+
+  // Replace comma with point for double conversion
+  T.replaceInvalidChar(strInput, strOutput);
 
   // Verify input
-  switch (t1.checkInputfromKeyboard(&str1, &str2))
+  switch (T.checkInputfromKeyboard(&strInput, &strOutput))
   {
-    case 0:  // Input validated
+    case NoError:  // Input validated
     {
-      double uIn = str1.toDouble();
-      double uOut = str2.toDouble();
+      double uIn = strInput.toDouble();
+      double uOut = strOutput.toDouble();
       double diff = uIn - uOut;  // voltage over R2
       double R1 = findClosest(diff, eSerie);
       double R2 = findClosest(uOut, eSerie);
@@ -144,7 +147,7 @@ void MainWindow::on_btnCalculate_clicked()
       break;
     }
 
-    case 1:  // Input Voltage not OK => print Error
+    case InputVoltageNotOk:
     {
       ui->statusBar->setStyleSheet("color: red");
       ui->statusBar->showMessage(
@@ -152,7 +155,7 @@ void MainWindow::on_btnCalculate_clicked()
       break;
     }
 
-    case 2:  // Outout Voltage not OK => print Error
+    case OutputVoltageNotOk:
     {
       ui->statusBar->setStyleSheet("color: red");
       ui->statusBar->showMessage(
@@ -160,15 +163,22 @@ void MainWindow::on_btnCalculate_clicked()
       break;
     }
 
-    case 3:  // Output Voltage is higher than Input Voltage => print Error
+    case OutputVoltageHigherThanInputVoltage:
     {
       ui->statusBar->setStyleSheet("color: red");
       ui->statusBar->showMessage(
-          "Ausgangsspannung ist grösser als die Eingangsspannung");
+          "Ausgangsspannung ist grösser oder gleich der Eingangsspannung");
       break;
     }
 
-    default:  // Error
+    case NoValues:
+    {
+      ui->statusBar->setStyleSheet("color: red");
+      ui->statusBar->showMessage("Bitte zuerst Spannungswerte eingeben");
+      break;
+    }
+
+    default:  // Unknown Error
     {
       ui->statusBar->setStyleSheet("color: red");
       ui->statusBar->showMessage("Ein unbekannter Fehler ist aufgetreten!");
