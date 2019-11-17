@@ -128,24 +128,52 @@ void MainWindow::on_btnCalculate_clicked()
   str2 = ui->txt_outputVoltage->text();
 
   // Verify input
-  if (t1.checkInputfromKeyboard(&str1, &str2))
+  switch (t1.checkInputfromKeyboard(&str1, &str2))
   {
-    // Input OK
-    double uIn = str1.toDouble();
-    double uOut = str2.toDouble();
-    double diff = uIn - uOut;  // voltage over R2
-    double R1 = findClosest(diff, eSerie);
-    double R2 = findClosest(uOut, eSerie);
-    ui->lbl_R1value->setText(QString::number(R1) + " * 10<sup>x</sup> Ω");
-    ui->lbl_R2value->setText(QString::number(R2) + " * 10<sup>x</sup> Ω");
-    ui->statusBar->setStyleSheet("color: black");
-    ui->statusBar->showMessage("Fertig");
-  }
-  else
-  {
-    // Input not OK => print Error
-    ui->statusBar->setStyleSheet("color: red");
-    ui->statusBar->showMessage("Bitte gültige Spannungswerte eingeben");
+    case 0:  // Input validated
+    {
+      double uIn = str1.toDouble();
+      double uOut = str2.toDouble();
+      double diff = uIn - uOut;  // voltage over R2
+      double R1 = findClosest(diff, eSerie);
+      double R2 = findClosest(uOut, eSerie);
+      ui->lbl_R1value->setText(QString::number(R1) + " * 10<sup>x</sup> Ω");
+      ui->lbl_R2value->setText(QString::number(R2) + " * 10<sup>x</sup> Ω");
+      ui->statusBar->setStyleSheet("color: black");
+      ui->statusBar->showMessage("Fertig");
+      break;
+    }
+
+    case 1:  // Input Voltage not OK => print Error
+    {
+      ui->statusBar->setStyleSheet("color: red");
+      ui->statusBar->showMessage(
+          "Bitte gültigen Wert für die Eingangsspannung eingeben");
+      break;
+    }
+
+    case 2:  // Outout Voltage not OK => print Error
+    {
+      ui->statusBar->setStyleSheet("color: red");
+      ui->statusBar->showMessage(
+          "Bitte gültigen Wert für die Ausgangsspannung eingeben");
+      break;
+    }
+
+    case 3:  // Output Voltage is higher than Input Voltage => print Error
+    {
+      ui->statusBar->setStyleSheet("color: red");
+      ui->statusBar->showMessage(
+          "Ausgangsspannung ist grösser als die Eingangsspannung");
+      break;
+    }
+
+    default:  // Error
+    {
+      ui->statusBar->setStyleSheet("color: red");
+      ui->statusBar->showMessage("Ein unbekannter Fehler ist aufgetreten!");
+      break;
+    }
   }
 }
 

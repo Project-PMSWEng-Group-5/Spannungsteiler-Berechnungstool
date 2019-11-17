@@ -11,7 +11,7 @@ class Test
    *                QString* str2 -> Pointer to the Output Voltage Value
    * OUTPUTS:       char -> 1: Everything OK and 0: An Error
    */
-  char checkInputfromKeyboard(QString* str1, QString* str2);
+  int checkInputfromKeyboard(QString* str1, QString* str2);
 
  private:
 };

@@ -3,7 +3,7 @@
 static QString strInput;
 static QString strOutput;
 
-char Test::checkInputfromKeyboard(QString* str1, QString* str2)
+int Test::checkInputfromKeyboard(QString* str1, QString* str2)
 {
   // Convert String to UTF8-Set
   strInput = str1->toUtf8();
@@ -18,7 +18,7 @@ char Test::checkInputfromKeyboard(QString* str1, QString* str2)
   {
     if (!(((strInput[i] >= ("0")) && (strInput[i] <= ("9"))) ||
           (strInput[i] == ("."))))
-      return 0;  // Unknown Character
+      return 1;  // Unknown Character
   }
 
   // Check Output Voltage for invalid Characters
@@ -26,7 +26,7 @@ char Test::checkInputfromKeyboard(QString* str1, QString* str2)
   {
     if (!(((strOutput[i] >= ("0")) && (strOutput[i] <= ("9"))) ||
           (strOutput[i] == ("."))))
-      return 0;  // Unknown Character
+      return 2;  // Unknown Character
   }
 
   // Check if Output Voltage is higher than Input Voltage
@@ -34,7 +34,7 @@ char Test::checkInputfromKeyboard(QString* str1, QString* str2)
   double Outputvoltage = str2->toDouble();
 
   if (Outputvoltage >= InputVoltage)
-    return 0;  // Output higher than Input
+    return 3;  // Output higher than Input
 
-  return 1;  // Everything OK
+  return 0;  // Everything OK
 }
