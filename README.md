@@ -1,2 +1,6 @@
-# Spannungsteiler-Berechnungstool
-Im Rahmen dieses Projekt soll eine Software entwickelt werden, welche das optimale Spannungsteiler Widerstandsverhältnis für einen unbelasteten Spannungsteiler berechnet.
+# Spannungsteiler-Berechnungstool		{#mainpage}
+
+# Project description #
+
+GUI to calculate the ideal resistor-ratio of a simple unloaded voltage divider.
+
