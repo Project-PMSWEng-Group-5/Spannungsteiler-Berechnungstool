@@ -8,8 +8,8 @@ class chooseSeries
 
   static const double E3[];
   static const double E6[];
-  static const double E9[];
   static const double E12[];
+  static const double E24[];
 
   /* DESCRIPTION :    Evaluates number of chosen E-Series which matches the best
    * the given value INPUTS :          double value    -> value of which closest

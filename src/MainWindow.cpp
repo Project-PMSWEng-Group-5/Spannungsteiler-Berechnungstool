@@ -104,10 +104,10 @@ void MainWindow::on_btnCalculate_clicked()
       eSerie = chooseSeries::E6;
       break;
     case 2:
-      eSerie = chooseSeries::E9;
+      eSerie = chooseSeries::E12;
       break;
     case 3:
-      eSerie = chooseSeries::E12;
+      eSerie = chooseSeries::E24;
       break;
     default:
       printf("Wrong Id\n");
