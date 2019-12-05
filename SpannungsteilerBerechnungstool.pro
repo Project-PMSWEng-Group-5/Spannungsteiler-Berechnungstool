@@ -27,11 +27,14 @@ CONFIG += c++11
 SOURCES += \
         src/CheckInput.cpp \
         src/MainWindow.cpp \
-        src/main.cpp
+        src/chooseSeries.cpp \
+        src/main.cpp \
+
 
 HEADERS += \
         include/CheckInput.h \
-        include/MainWindow.h
+        include/MainWindow.h \
+        include/chooseSeries.h
 
 FORMS += \
         src/MainWindow.ui
@@ -43,3 +46,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
   resource.qrc
+
+
+
+
