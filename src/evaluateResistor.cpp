@@ -1,5 +1,7 @@
 #include "../include/evaluateResistor.h"
-#include <cmath>  // std::abs
+#include <float.h>  //DBL_MAX
+#include <cassert>
+#include <cmath>  // std::fabs
 
 // Lookup tables for E-Series
 const double evaluateResistor::E3[] = {1.0, 2.2, 4.7, 0.0};
@@ -12,6 +14,9 @@ const double evaluateResistor::E24[] = {
 
 double evaluateResistor::findClosest(double value, const double* eSerie)
 {
+  assert(value > 0);              // negative
+  assert(value < DBL_MAX / 100);  // inf
+
   double delta = fabs(eSerie[0] - value);
   double d = 0;
   int index = 0;
