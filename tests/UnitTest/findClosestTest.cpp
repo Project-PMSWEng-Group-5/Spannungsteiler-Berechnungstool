@@ -41,6 +41,7 @@ TEST(findClosestTest, findClosest_vec2)
   EXPECT_EQ(evaluateResistor::findClosest(42, evaluateResistor::E24), 43);
 }
 
+// probably not border case, but it would be a PitA to find the exact value
 TEST(findClosestTest, findClosest_vec3)
 {
   EXPECT_EQ(
