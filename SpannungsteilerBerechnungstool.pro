@@ -27,14 +27,14 @@ CONFIG += c++11
 SOURCES += \
         src/CheckInput.cpp \
         src/MainWindow.cpp \
-        src/chooseSeries.cpp \
+  src/evaluateResistor.cpp \
         src/main.cpp \
 
 
 HEADERS += \
         include/CheckInput.h \
         include/MainWindow.h \
-        include/chooseSeries.h
+        include/evaluateResistor.h
 
 FORMS += \
         src/MainWindow.ui

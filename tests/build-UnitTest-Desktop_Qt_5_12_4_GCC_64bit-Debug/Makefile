@@ -52,10 +52,10 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../../src/chooseSeries.cpp \
+SOURCES       = ../../src/evaluateResistor.cpp \
 		../UnitTest/findClosestTest.cpp \
 		../UnitTest/main.cpp 
-OBJECTS       = chooseSeries.o \
+OBJECTS       = evaluateResistor.o \
 		findClosestTest.o \
 		main.o
 DIST          = /opt/qt/5.12.4/gcc_64/mkspecs/features/spec_pre.prf \
@@ -233,7 +233,7 @@ DIST          = /opt/qt/5.12.4/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/qt/5.12.4/gcc_64/mkspecs/features/exceptions.prf \
 		/opt/qt/5.12.4/gcc_64/mkspecs/features/yacc.prf \
 		/opt/qt/5.12.4/gcc_64/mkspecs/features/lex.prf \
-		../UnitTest/UnitTest.pro  ../../src/chooseSeries.cpp \
+		../UnitTest/UnitTest.pro  ../../src/evaluateResistor.cpp \
 		../UnitTest/findClosestTest.cpp \
 		../UnitTest/main.cpp
 QMAKE_TARGET  = UnitTest
@@ -615,7 +615,7 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /opt/qt/5.12.4/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../../src/chooseSeries.cpp ../UnitTest/findClosestTest.cpp ../UnitTest/main.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../../src/evaluateResistor.cpp ../UnitTest/findClosestTest.cpp ../UnitTest/main.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -663,10 +663,10 @@ compiler_clean: compiler_moc_predefs_clean
 
 ####### Compile
 
-chooseSeries.o: ../../src/chooseSeries.cpp ../../include/chooseSeries.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o chooseSeries.o ../../src/chooseSeries.cpp
+evaluateResistor.o: ../../src/evaluateResistor.cpp ../../include/evaluateResistor.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o evaluateResistor.o ../../src/evaluateResistor.cpp
 
-findClosestTest.o: ../UnitTest/findClosestTest.cpp ../../include/chooseSeries.h
+findClosestTest.o: ../UnitTest/findClosestTest.cpp ../../include/evaluateResistor.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o findClosestTest.o ../UnitTest/findClosestTest.cpp
 
 main.o: ../UnitTest/main.cpp /opt/qt/5.12.4/gcc_64/include/QtCore/QCoreApplication \

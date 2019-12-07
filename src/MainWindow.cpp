@@ -1,7 +1,7 @@
 #include "../include/MainWindow.h"
 #include <QButtonGroup>
 #include "../include/CheckInput.h"
-#include "../include/chooseSeries.h"
+#include "../include/evaluateResistor.h"
 #include "ui_MainWindow.h"
 
 // Objects for Strings
@@ -97,17 +97,17 @@ void MainWindow::on_btnCalculate_clicked()
   group->addButton(ui->rb_E12, 2);
   group->addButton(ui->rb_E24, 3);
   const double* eSerie;
-  eSerie = chooseSeries::E3;
+  eSerie = evaluateResistor::E3;
   switch (group->checkedId())
   {  // Evaluate the chosen E-Serie
     case 1:
-      eSerie = chooseSeries::E6;
+      eSerie = evaluateResistor::E6;
       break;
     case 2:
-      eSerie = chooseSeries::E12;
+      eSerie = evaluateResistor::E12;
       break;
     case 3:
-      eSerie = chooseSeries::E24;
+      eSerie = evaluateResistor::E24;
       break;
     default:
       printf("Wrong Id\n");
@@ -129,8 +129,8 @@ void MainWindow::on_btnCalculate_clicked()
       double uIn = strInput.toDouble();
       double uOut = strOutput.toDouble();
       double diff = uIn - uOut;  // voltage over R2
-      double R1 = chooseSeries::findClosest(diff, eSerie);
-      double R2 = chooseSeries::findClosest(uOut, eSerie);
+      double R1 = evaluateResistor::findClosest(diff, eSerie);
+      double R2 = evaluateResistor::findClosest(uOut, eSerie);
       ui->lbl_R1value->setText(QString::number(R1) + " * 10<sup>x</sup> Ω");
       ui->lbl_R2value->setText(QString::number(R2) + " * 10<sup>x</sup> Ω");
       ui->statusBar->setStyleSheet("color: black");
