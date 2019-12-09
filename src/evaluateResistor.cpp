@@ -17,7 +17,6 @@ double evaluateResistor::findClosest(double value, const double* eSerie)
   assert(value > 0);              // negative
   assert(value < DBL_MAX / 100);  // inf
 
-  double delta = fabs(eSerie[0] - value);
   double d = 0;
   int index = 0;
   int exponent = 0;  // to scale the E-Series value to the correct number
@@ -33,6 +32,8 @@ double evaluateResistor::findClosest(double value, const double* eSerie)
     num = num / 10;
     exponent = exponent + 1;
   }
+
+  double delta = fabs(eSerie[0] - num);
   int n = 1;
 
   while (eSerie[n] != 0.0)
