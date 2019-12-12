@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['evaluateresistor',['evaluateResistor',['../classevaluateResistor.html',1,'']]]
+  ['evaluateresistor_1',['evaluateResistor',['../classevaluateResistor.html',1,'']]]
 ];

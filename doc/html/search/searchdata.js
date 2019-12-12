@@ -1,15 +1,9 @@
 var indexSectionsWithContent =
 {
-<<<<<<< HEAD
-  0: "cemrt",
+  0: "cefmrst",
   1: "emt",
-  2: "cmr"
-=======
-  0: "emst",
-  1: "emt",
-  2: "m",
+  2: "cfmr",
   3: "s"
->>>>>>> 64d8495540cdcedc175479421d7cf46db4ce617a
 };
 
 var indexSectionNames =

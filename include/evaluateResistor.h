@@ -1,6 +1,11 @@
 #ifndef evaluateResistor_H
 #define evaluateResistor_H
 
+/*!
+\brief evaluateResistor Class
+ 
+ this class is a helper Class for the findClosest() method.
+*/
 class evaluateResistor
 {
  public:
@@ -11,14 +16,13 @@ class evaluateResistor
   static const double E12[];
   static const double E24[];
 
-  /* DESCRIPTION : Evaluates number of chosen E-Series which matches the best
-   *               the given value
-   * INPUTS :  double value  -> value of which closest E-Series number should be
-   *                            evaluated
-   *           double* e Serie  -> Pointer to the chosen E-Series
-   * OUTPUTS :
-   *           double number   -> evaluated E-Series number
-   */
+    /*!
+    \brief find best matching E-Series value for parameter value
+
+    \param value represents the value for which the best maching E-Series value should be evaluated
+    \param eSerie represents the choosen E-Serie
+    \return best matching E-Serie value for value
+    returned */
   static double findClosest(double value, const double* eSerie);
 
  private:

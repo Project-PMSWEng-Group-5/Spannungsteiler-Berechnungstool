@@ -1,12 +1,20 @@
-\hypertarget{classevaluateResistor}{}\section{evaluate\+Resistor Class Reference}
-\label{classevaluateResistor}\index{evaluate\+Resistor@{evaluate\+Resistor}}
-\subsection*{Static Public Member Functions}
+\hypertarget{classevaluateResistor}{}\doxysection{evaluate\+Resistor Class Reference}
+\label{classevaluateResistor}\index{evaluateResistor@{evaluateResistor}}
+
+
+\mbox{\hyperlink{classevaluateResistor}{evaluate\+Resistor}} Class  
+
+
+
+
+{\ttfamily \#include $<$evaluate\+Resistor.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classevaluateResistor_a0d434e47b94ce646cbcd10e6f1f2e084}\label{classevaluateResistor_a0d434e47b94ce646cbcd10e6f1f2e084}} 
-static double {\bfseries find\+Closest} (double value, const double $\ast$e\+Serie)
-\end{DoxyCompactItemize}
-\subsection*{Static Public Attributes}
+static double \mbox{\hyperlink{classevaluateResistor_a0d434e47b94ce646cbcd10e6f1f2e084}{find\+Closest}} (double value, const double $\ast$e\+Serie)
+\begin{DoxyCompactList}\small\item\em find best matching E-\/\+Series value for parameter value \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classevaluateResistor_af5e266c489d3034f4077ca44f59a6c1d}\label{classevaluateResistor_af5e266c489d3034f4077ca44f59a6c1d}} 
@@ -21,29 +29,59 @@ static const double {\bfseries E24} \mbox{[}$\,$\mbox{]}
 \end{DoxyCompactItemize}
 
 
-\subsection{Member Data Documentation}
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classevaluateResistor}{evaluate\+Resistor}} Class 
+
+this class is a helper Class for the \mbox{\hyperlink{classevaluateResistor_a0d434e47b94ce646cbcd10e6f1f2e084}{find\+Closest()}} method. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classevaluateResistor_a0d434e47b94ce646cbcd10e6f1f2e084}\label{classevaluateResistor_a0d434e47b94ce646cbcd10e6f1f2e084}} 
+\index{evaluateResistor@{evaluateResistor}!findClosest@{findClosest}}
+\index{findClosest@{findClosest}!evaluateResistor@{evaluateResistor}}
+\doxysubsubsection{\texorpdfstring{findClosest()}{findClosest()}}
+{\footnotesize\ttfamily double evaluate\+Resistor\+::find\+Closest (\begin{DoxyParamCaption}\item[{double}]{value,  }\item[{const double $\ast$}]{e\+Serie }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+find best matching E-\/\+Series value for parameter value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & represents the value for which the best maching E-\/\+Series value should be evaluated \\
+\hline
+{\em e\+Serie} & represents the choosen E-\/\+Serie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+best matching E-\/\+Serie value for value returned 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{classevaluateResistor_a4ad1d14208c52720ebded7accf2ed219}\label{classevaluateResistor_a4ad1d14208c52720ebded7accf2ed219}} 
-\index{evaluate\+Resistor@{evaluate\+Resistor}!E12@{E12}}
-\index{E12@{E12}!evaluate\+Resistor@{evaluate\+Resistor}}
-\subsubsection{\texorpdfstring{E12}{E12}}
+\index{evaluateResistor@{evaluateResistor}!E12@{E12}}
+\index{E12@{E12}!evaluateResistor@{evaluateResistor}}
+\doxysubsubsection{\texorpdfstring{E12}{E12}}
 {\footnotesize\ttfamily const double evaluate\+Resistor\+::\+E12\hspace{0.3cm}{\ttfamily [static]}}
 
 {\bfseries Initial value\+:}
-\begin{DoxyCode}
-= \{1.0, 1.2, 1.5, 1.8, 2.2, 2.7, 3.3,
-                                        3.9, 4.7, 5.6, 6.8, 8.2, 0.0\}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{1.0, 1.2, 1.5, 1.8, 2.2, 2.7, 3.3,}
+\DoxyCodeLine{                                        3.9, 4.7, 5.6, 6.8, 8.2, 0.0\}}
+
 \end{DoxyCode}
 \mbox{\Hypertarget{classevaluateResistor_a05152df560338e850ff81a930267b246}\label{classevaluateResistor_a05152df560338e850ff81a930267b246}} 
-\index{evaluate\+Resistor@{evaluate\+Resistor}!E24@{E24}}
-\index{E24@{E24}!evaluate\+Resistor@{evaluate\+Resistor}}
-\subsubsection{\texorpdfstring{E24}{E24}}
+\index{evaluateResistor@{evaluateResistor}!E24@{E24}}
+\index{E24@{E24}!evaluateResistor@{evaluateResistor}}
+\doxysubsubsection{\texorpdfstring{E24}{E24}}
 {\footnotesize\ttfamily const double evaluate\+Resistor\+::\+E24\hspace{0.3cm}{\ttfamily [static]}}
 
 {\bfseries Initial value\+:}
-\begin{DoxyCode}
-= \{
-    1.0, 1.1, 1.2, 1.3, 1.5, 1.6, 1.8, 2.0, 2.2, 2.4, 2.7, 3.0, 3.3,
-    3.6, 3.9, 4.3, 4.7, 5.1, 5.6, 6.2, 6.8, 7.5, 8.2, 9.1, 0.0\}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    1.0, 1.1, 1.2, 1.3, 1.5, 1.6, 1.8, 2.0, 2.2, 2.4, 2.7, 3.0, 3.3,}
+\DoxyCodeLine{    3.6, 3.9, 4.3, 4.7, 5.1, 5.6, 6.2, 6.8, 7.5, 8.2, 9.1, 0.0\}}
+
 \end{DoxyCode}
 
 
