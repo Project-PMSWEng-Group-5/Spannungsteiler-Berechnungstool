@@ -1,9 +1,17 @@
-/home/user/Documents/Spannungsteiler-Berechnungstool/include/CheckInput.h:16: warning: Compound Test is not documented.
-/home/user/Documents/Spannungsteiler-Berechnungstool/include/evaluateResistor.h:5: warning: Compound evaluateResistor is not documented.
-/home/user/Documents/Spannungsteiler-Berechnungstool/include/evaluateResistor.h:22: warning: Member findClosest(double value, const double *eSerie) (function) of class evaluateResistor is not documented.
-/home/user/Documents/Spannungsteiler-Berechnungstool/include/evaluateResistor.h:9: warning: Member E3[] (variable) of class evaluateResistor is not documented.
-/home/user/Documents/Spannungsteiler-Berechnungstool/include/evaluateResistor.h:10: warning: Member E6[] (variable) of class evaluateResistor is not documented.
-/home/user/Documents/Spannungsteiler-Berechnungstool/include/evaluateResistor.h:11: warning: Member E12[] (variable) of class evaluateResistor is not documented.
-/home/user/Documents/Spannungsteiler-Berechnungstool/include/evaluateResistor.h:12: warning: Member E24[] (variable) of class evaluateResistor is not documented.
-/home/user/Documents/Spannungsteiler-Berechnungstool/include/CheckInput.h:23: warning: Member checkInputfromKeyboard(QString *str1, QString *str2) (function) of class Test is not documented.
-/home/user/Documents/Spannungsteiler-Berechnungstool/include/CheckInput.h:31: warning: Member replaceInvalidChar(QString &str1, QString &str2) (function) of class Test is not documented.
+/home/user/Documents/Project/include/evaluateResistor.h:5: warning: Compound evaluateResistor is not documented.
+/home/user/Documents/Project/include/evaluateResistor.h:22: warning: Member findClosest(double value, const double *eSerie) (function) of class evaluateResistor is not documented.
+/home/user/Documents/Project/include/evaluateResistor.h:9: warning: Member E3[] (variable) of class evaluateResistor is not documented.
+/home/user/Documents/Project/include/evaluateResistor.h:10: warning: Member E6[] (variable) of class evaluateResistor is not documented.
+/home/user/Documents/Project/include/evaluateResistor.h:11: warning: Member E12[] (variable) of class evaluateResistor is not documented.
+/home/user/Documents/Project/include/evaluateResistor.h:12: warning: Member E24[] (variable) of class evaluateResistor is not documented.
+/home/user/Documents/Project/include/CheckInput.h:21: warning: argument 'QString' of command @param is not found in the argument list of Test::checkInputfromKeyboard(QString *str1, QString *str2)
+/home/user/Documents/Project/include/CheckInput.h:21: warning: argument 'QString' of command @param is not found in the argument list of Test::checkInputfromKeyboard(QString *str1, QString *str2)
+/home/user/Documents/Project/include/CheckInput.h:26: warning: The following parameters of Test::checkInputfromKeyboard(QString *str1, QString *str2) are not documented:
+  parameter 'str1'
+  parameter 'str2'
+/home/user/Documents/Project/include/CheckInput.h:28: warning: argument 'QString' of command @param is not found in the argument list of Test::replaceInvalidChar(QString &str1, QString &str2)
+/home/user/Documents/Project/include/CheckInput.h:28: warning: argument 'QString' of command @param is not found in the argument list of Test::replaceInvalidChar(QString &str1, QString &str2)
+/home/user/Documents/Project/include/CheckInput.h:33: warning: The following parameters of Test::replaceInvalidChar(QString &str1, QString &str2) are not documented:
+  parameter 'str1'
+  parameter 'str2'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/user/Documents/Project/doc/html/inherit_graph_2.dot" -Tpng -o "/home/user/Documents/Project/doc/html/inherit_graph_2.png"'

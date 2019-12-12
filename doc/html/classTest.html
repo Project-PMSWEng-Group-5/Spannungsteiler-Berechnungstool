@@ -65,16 +65,99 @@ $(function() {
 <div class="title">Test Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A <a class="el" href="classTest.html" title="A Test class Includes both functions for user input check. ">Test</a> class Includes both functions for user input check.  
+ <a href="classTest.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="CheckInput_8h_source.html">CheckInput.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3b223ab01f34445e73b914b48a2ff7fc"><td class="memItemLeft" align="right" valign="top"><a id="a3b223ab01f34445e73b914b48a2ff7fc"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>checkInputfromKeyboard</b> (QString *str1, QString *str2)</td></tr>
+<tr class="memitem:a3b223ab01f34445e73b914b48a2ff7fc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTest.html#a3b223ab01f34445e73b914b48a2ff7fc">checkInputfromKeyboard</a> (QString *str1, QString *str2)</td></tr>
+<tr class="memdesc:a3b223ab01f34445e73b914b48a2ff7fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies the plausibility of the values entered by the user.  <a href="#a3b223ab01f34445e73b914b48a2ff7fc">More...</a><br /></td></tr>
 <tr class="separator:a3b223ab01f34445e73b914b48a2ff7fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83a0f09e6583bf623f84f0caa50342d9"><td class="memItemLeft" align="right" valign="top"><a id="a83a0f09e6583bf623f84f0caa50342d9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>replaceInvalidChar</b> (QString &amp;str1, QString &amp;str2)</td></tr>
+<tr class="memitem:a83a0f09e6583bf623f84f0caa50342d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTest.html#a83a0f09e6583bf623f84f0caa50342d9">replaceInvalidChar</a> (QString &amp;str1, QString &amp;str2)</td></tr>
+<tr class="memdesc:a83a0f09e6583bf623f84f0caa50342d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces each "," sign with a "." sign so it can be converted to a double.  <a href="#a83a0f09e6583bf623f84f0caa50342d9">More...</a><br /></td></tr>
 <tr class="separator:a83a0f09e6583bf623f84f0caa50342d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A <a class="el" href="classTest.html" title="A Test class Includes both functions for user input check. ">Test</a> class Includes both functions for user input check. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3b223ab01f34445e73b914b48a2ff7fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b223ab01f34445e73b914b48a2ff7fc">&#9670;&nbsp;</a></span>checkInputfromKeyboard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Test::checkInputfromKeyboard </td>
+          <td>(</td>
+          <td class="paramtype">QString *&#160;</td>
+          <td class="paramname"><em>str1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *&#160;</td>
+          <td class="paramname"><em>str2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifies the plausibility of the values entered by the user. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">QString*</td><td>str1 -&gt; Pointer to the Input Voltage Value. </td></tr>
+    <tr><td class="paramname">QString*</td><td>str2 -&gt; Pointer to the Output Voltage Value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>char -&gt; 1: Everything OK and 0: An Error. </dd></dl>
+
+</div>
+</div>
+<a id="a83a0f09e6583bf623f84f0caa50342d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83a0f09e6583bf623f84f0caa50342d9">&#9670;&nbsp;</a></span>replaceInvalidChar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Test::replaceInvalidChar </td>
+          <td>(</td>
+          <td class="paramtype">QString &amp;&#160;</td>
+          <td class="paramname"><em>str1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString &amp;&#160;</td>
+          <td class="paramname"><em>str2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Replaces each "," sign with a "." sign so it can be converted to a double. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">QString*</td><td>str1 -&gt; Pointer to the Input Voltage Value. </td></tr>
+    <tr><td class="paramname">QString*</td><td>str2 -&gt; Pointer to the Output Voltage Value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>include/<a class="el" href="CheckInput_8h_source.html">CheckInput.h</a></li>
 </ul>
