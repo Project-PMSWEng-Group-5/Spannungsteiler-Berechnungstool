@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['test',['Test',['../classTest.html',1,'']]]
+  ['spannungsteiler_2dberechnungstool',['Spannungsteiler-Berechnungstool',['../index.html',1,'']]]
 ];

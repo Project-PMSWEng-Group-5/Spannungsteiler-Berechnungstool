@@ -5,5 +5,7 @@
 /home/user/Documents/Spannungsteiler-Berechnungstool/include/evaluateResistor.h:10: warning: Member E6[] (variable) of class evaluateResistor is not documented.
 /home/user/Documents/Spannungsteiler-Berechnungstool/include/evaluateResistor.h:11: warning: Member E12[] (variable) of class evaluateResistor is not documented.
 /home/user/Documents/Spannungsteiler-Berechnungstool/include/evaluateResistor.h:12: warning: Member E24[] (variable) of class evaluateResistor is not documented.
+/home/user/Documents/Spannungsteiler-Berechnungstool/include/evaluateResistor.h:11: warning: parameters of member evaluateResistor::E12 are not (all) documented
+/home/user/Documents/Spannungsteiler-Berechnungstool/include/evaluateResistor.h:12: warning: parameters of member evaluateResistor::E24 are not (all) documented
 /home/user/Documents/Spannungsteiler-Berechnungstool/include/CheckInput.h:23: warning: Member checkInputfromKeyboard(QString *str1, QString *str2) (function) of class Test is not documented.
 /home/user/Documents/Spannungsteiler-Berechnungstool/include/CheckInput.h:31: warning: Member replaceInvalidChar(QString &str1, QString &str2) (function) of class Test is not documented.
